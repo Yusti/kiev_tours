@@ -1,0 +1,62 @@
+li {
+	list-style: none;
+}
+
+.vertical {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.tours-list-wrapper {
+	background-color: #fff;
+	width: 100%;
+	max-width: 1440px;
+	text-align: center;
+	padding: 0 20px;
+}
+
+.about-tours{
+	background: url("../../img/tours/hero-tours.jpg") no-repeat center center;
+	background-size: cover;
+	height: 400px;
+	position: relative;
+}
+
+.tours-list-overlay {
+	background-color: rgba(255, 255, 255, 0.7);
+	color: black;
+	font-size: 24px;
+	margin: 0 auto;
+	width: 90%;
+	max-width: 700px;
+	padding: 20px;
+}
+
+.services-descr {
+	padding: 20px;
+}
+
+.panel-title:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.main-tour-img {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+}
+
+.one-tour-info {
+	height: 440px;
+	overflow: hidden;
+	position: relative;
+	margin: 20px auto;
+}

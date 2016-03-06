@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+{{ tour }}
+{% for img in imgs %}
+	<img src="{% static img %}">
+{% endfor %}
+
+{% endblock content %}

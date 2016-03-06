@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block extrastyles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'tours/css/tours-list.css' %}" />
+{% endblock extrastyles %}
+
+{% block content %}
+
+<div class="clearfix tours-list-wrapper">
+	
+	<div class="about-tours clearfix">
+		<div class="tours-list-overlay vertical">
+			<h3>WELCOME TO KIEV!</h3>
+			<p>See below the places we advice you to visit.</p>
+		</div>
+	</div>
+
+	<div class="services-descr">
+		<h3>With KIEV-TOURS your can ... Choose the comfortable service:</h3>
+	</div>
+
+	<div class="panel-group excursions" id="accordion">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Excursions - is the most popular service. You just choose the places you want to visit and our guides will do the best you to love visiting Kiev!</br>
+				Look what we've prepared for you:
+				</h4>
+			</div>
+			<div id="collapse1" class="panel-collapse collapse text-left">
+				{% for tour, tourImage in tours %}
+				<a href="{% url 'tours:tours-detail' tour.id %}">
+					<div class="one-tour-info col-lg-4 col-sm-6">
+						<img class="main-tour-img vertical" src="{% static tourImage %}">
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="tours-weekend">
+		
+	</div>
+
+	<div class="guide">
+		
+	</div>
+
+</div>
+
+{% endblock content %}

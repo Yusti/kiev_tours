@@ -1,0 +1,42 @@
+django-admin startproject <mysitename>
+python manage.py startapp <myappname>
+
+add your application to settings.py in the following way:
+1. create apps.py in your <appname> folder with the next:
+from django.apps import AppConfig
+
+class AppnameConfig(AppConfig):
+    name = 'appname'
+
+2.(!!! DO IT FOR ALL ADDED APPS) add AppnameConfig to Installed apps in settings.py:
+INSTALLED_APPS = (
+    'appname.apps.AppnameConfig',
+...
+
+add models to admin.py
+# from .models import Tour
+# admin.site.register(Tour)
+
+set database:
+1. create database in mysql:
+mysql -u root -p
+create database kiev_tours_db;
+show databases;
+create user kiev_tours_user;
+grant all on kiev_tours_db.* to 'kiev_tours_user'@'localhost' identified by 'kiev_tours_password';
+exit;
+2. Make changes in setting.py to: 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kiev_tours_db',
+        'USER': 'kiev_tours_user',
+        'PASSWORD': 'kiev_tours_password',
+        'HOST': 'localhost',
+        'PORT': '8000',
+    }
+}
+3. python manage.py makemigrations
+4. python manage.py migrate
+5. python manage.py createsuperuser
+
